@@ -9,3 +9,20 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+});
+
+function signup() {
+    // Get the values from the form
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    if (email === "" || password === "") {
+        alert("Please enter your email and password.");
+        return;
+    }
+
+    alert("🎉 Congratulations! Your SENTRIX account has been created successfully.");
+
+    document.getElementById("email").value = "";
+    document.getElementById("password").value = "";
+}
