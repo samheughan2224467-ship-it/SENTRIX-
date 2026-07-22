@@ -6,12 +6,13 @@ import {
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_AUTH_DOMAIN",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_STORAGE_BUCKET",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyCBTOGG0DZv7eIaOU-XZFCcXOYAf8IPT-0",
+  authDomain: "sentrix-vxe.firebaseapp.com",
+  projectId: "sentrix-vxe",
+  storageBucket: "sentrix-vxe.firebasestorage.app",
+  messagingSenderId: "392250155609",
+  appId: "1:392250155609:web:136617e31f25bfef6bc748",
+  measurementId: "G-23JWKYB2YV"
 };
 
 const app = initializeApp(firebaseConfig);
