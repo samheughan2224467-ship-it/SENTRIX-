@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SENTRIX Dashboard</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#08152c;
+    color:white;
+}
+
+header{
+    background:#0d1d3a;
+    padding:20px;
+    text-align:center;
+    border-bottom:3px solid gold;
+}
+
+.container{
+    padding:30px;
+}
+
+.card{
+    background:#12284d;
+    padding:20px;
+    border-radius:12px;
+    margin-bottom:20px;
+}
+
+button{
+    background:gold;
+    color:#08152c;
+    border:none;
+    padding:12px 25px;
+    border-radius:30px;
+    font-size:16px;
+    cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>SENTRIX Dashboard</h1>
+</header>
+
+<div class="container">
+
+<div class="card">
+<h2>Welcome!</h2>
+<p>You have successfully logged into SENTRIX.</p>
+</div>
+
+<div class="card">
+<h3>Security Status</h3>
+<p>🟢 Your account is secure.</p>
+</div>
+
+<button onclick="logout()">Log Out</button>
+
+</div>
+
+<script>
+function logout(){
+    window.location.href="login.html";
+}
+</script>
+
+</body>
+  </html>
