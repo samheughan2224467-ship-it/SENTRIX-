@@ -54,6 +54,7 @@ button{
 <div class="card">
 <h2>Welcome!</h2>
 <p>You have successfully logged into SENTRIX.</p>
+<p>Logged in as: <strong id="user-email">Loading...</strong></p>
 </div>
 
 <div class="card">
@@ -65,11 +66,26 @@ button{
 
 </div>
 
-<script>
-function logout(){
-    window.location.href="login.html";
-}
+<script type="module">
+import { auth } from "./firebase.js";
+import {
+  onAuthStateChanged,
+  signOut
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    document.getElementById("user-email").textContent = user.email;
+  } else {
+    window.location.href = "login.html";
+  }
+});
+
+window.logout = async function () {
+  await signOut(auth);
+  window.location.href = "login.html";
+};
 </script>
 
 </body>
-  </html>
+</html>
