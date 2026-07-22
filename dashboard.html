@@ -39,6 +39,16 @@ button{
     border-radius:30px;
     font-size:16px;
     cursor:pointer;
+    margin-top:10px;
+}
+
+textarea{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    font-size:15px;
+    box-sizing:border-box;
 }
 </style>
 </head>
@@ -60,6 +70,22 @@ button{
 <div class="card">
 <h3>Security Status</h3>
 <p>🟢 Your account is secure.</p>
+</div>
+
+<div class="card">
+<h3>🛡 Scam Detector</h3>
+
+<p>Paste a suspicious message below:</p>
+
+<textarea
+id="scam-text"
+rows="6"
+placeholder="Paste an email, SMS or WhatsApp message here..."></textarea>
+
+<button onclick="scanMessage()">Analyze Message</button>
+
+<p id="scan-result" style="margin-top:20px;font-weight:bold;"></p>
+
 </div>
 
 <button onclick="logout()">Log Out</button>
@@ -84,6 +110,47 @@ onAuthStateChanged(auth, (user) => {
 window.logout = async function () {
   await signOut(auth);
   window.location.href = "login.html";
+};
+
+window.scanMessage = function () {
+
+    const text = document.getElementById("scam-text").value.toLowerCase();
+
+    let score = 0;
+
+    const keywords = [
+        "urgent",
+        "verify",
+        "bank",
+        "click here",
+        "winner",
+        "lottery",
+        "gift card",
+        "password",
+        "bitcoin",
+        "crypto",
+        "account suspended",
+        "limited time",
+        "claim now",
+        "otp",
+        "pin"
+    ];
+
+    keywords.forEach(word => {
+        if (text.includes(word)) {
+            score++;
+        }
+    });
+
+    const result = document.getElementById("scan-result");
+
+    if (score >= 5) {
+        result.innerHTML = "🔴 HIGH RISK: This message looks like a scam.";
+    } else if (score >= 2) {
+        result.innerHTML = "🟡 WARNING: This message contains suspicious content.";
+    } else {
+        result.innerHTML = "🟢 LOW RISK: No obvious scam keywords detected.";
+    }
 };
 </script>
 
