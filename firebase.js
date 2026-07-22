@@ -6,7 +6,7 @@ import {
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCBTOGG0DZv7eIaOU-XZFCcXOYAf8IPT-0",
+  apiKey: "AIzaSyCBTOGG0DZv7eIa0U-XZFCcXOYAf8IPT-0",
   authDomain: "sentrix-vxe.firebaseapp.com",
   projectId: "sentrix-vxe",
   storageBucket: "sentrix-vxe.firebasestorage.app",
